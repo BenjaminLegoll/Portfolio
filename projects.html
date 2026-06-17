@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes Projets | Benjamin Legoll</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="background-shapes">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Benjamin Legoll</a>
+
+      <div class="nav-links">
+        <a href="index.html#a-propos">À propos</a>
+        <a href="index.html#competences">Compétences</a>
+        <a href="index.html#projets">Projets</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+
+      <p class="eyebrow">Portfolio</p>
+      <h1>Mes Projets</h1>
+
+      <p class="subtitle">
+        Découvrez mes réalisations en développement, réseaux et cybersécurité.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="btn btn-secondary" href="index.html">← Retour à l’accueil</a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="card">
+      <h2>Projets universitaires (SAÉ)</h2>
+
+      <div class="project-list">
+
+        <article class="project-card">
+          <h3>SAÉ 2.03 - Semestre 2</h3>
+
+          <p class="project-subtitle">
+            Application web de gestion commerciale (Django)
+          </p>
+
+          <p>
+            Développement d'une application web Django permettant de gérer un drive marchand :
+            catégories, produits, clients, commandes et lignes de commande. Le projet s'appuie
+            sur une base SQL et des interfaces CRUD complètes.
+          </p>
+
+          <h4>Réalisations :</h4>
+          <ul>
+            <li>Modélisation des entités (clients, produits, commandes...)</li>
+            <li>Interfaces CRUD complètes</li>
+            <li>Calcul automatique des totaux de commandes</li>
+            <li>Templates Django et formulaires</li>
+            <li>Base MySQL + fallback SQLite</li>
+            <li>Préparation déploiement Linux</li>
+          </ul>
+
+          <a class="project-link"
+             href="https://github.com/glufy100/SAE203"
+             target="_blank"
+             rel="noopener noreferrer">
+            Voir le projet GitHub →
+          </a>
+
+          <div class="tags">
+            <span class="tag">Django</span>
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">SQLite</span>
+            <span class="tag">HTML/CSS</span>
+            <span class="tag">Linux</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>SAÉ 1.05 - Semestre 1</h3>
+
+          <p class="project-subtitle">
+            Analyse de données & automatisation
+          </p>
+
+          <p>
+            Développement d’un outil permettant d’analyser l’espace disque et de détecter
+            les fichiers volumineux afin de faciliter le nettoyage système.
+          </p>
+
+          <h4>Réalisations :</h4>
+          <ul>
+            <li>Analyse récursive des fichiers</li>
+            <li>Classement par taille</li>
+            <li>Génération automatique de scripts PowerShell</li>
+            <li>Optimisation du nettoyage disque</li>
+          </ul>
+
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">PowerShell</span>
+            <span class="tag">Automatisation</span>
+            <span class="tag">Data analysis</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>SAÉ 2.01 - Semestre 2</h3>
+
+          <p class="project-subtitle">
+            Infrastructure réseau sécurisée (GNS3)
+          </p>
+
+          <p>
+            Conception et déploiement d’une infrastructure réseau complète avec segmentation,
+            routage dynamique et services réseau en environnement simulé.
+          </p>
+
+          <h4>Réalisations :</h4>
+          <ul>
+            <li>Création de VLAN (100, 200, 300, 999)</li>
+            <li>Routage inter-VLAN</li>
+            <li>RIP v2 entre routeurs</li>
+            <li>DHCP, FTP, Apache</li>
+            <li>ACL et port-security</li>
+            <li>Spanning Tree (redondance)</li>
+          </ul>
+
+          <div class="tags">
+            <span class="tag">Cisco</span>
+            <span class="tag">GNS3</span>
+            <span class="tag">VLAN</span>
+            <span class="tag">RIP</span>
+            <span class="tag">ACL</span>
+            <span class="tag">DHCP</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>SAÉ 1.02 - Semestre 1</h3>
+
+          <p class="project-subtitle">
+            Initiation aux réseaux
+          </p>
+
+          <p>
+            Simulation d’un réseau d’entreprise avec VLAN, routage inter-VLAN et services DHCP
+            afin de comprendre les bases des infrastructures réseau.
+          </p>
+
+          <div class="tags">
+            <span class="tag">EVE-NG</span>
+            <span class="tag">VLAN</span>
+            <span class="tag">DHCP</span>
+            <span class="tag">Réseaux</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>SAÉ 1.03 - Semestre 1</h3>
+
+          <p class="project-subtitle">
+            Réseaux Wi-Fi & analyse de couverture
+          </p>
+
+          <p>
+            Étude d’un réseau Wi-Fi d’entreprise avec analyse de couverture et simulation
+            d’une infrastructure centralisée.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Wi-Fi</span>
+            <span class="tag">Cisco</span>
+            <span class="tag">Heatmap</span>
+            <span class="tag">Packet Tracer</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>SAÉ 1.01 - Semestre 1</h3>
+
+          <p class="project-subtitle">
+            Sensibilisation cybersécurité
+          </p>
+
+          <p>
+            Création d’un support de sensibilisation sur le phishing et les bonnes pratiques
+            de sécurité informatique.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Cybersécurité</span>
+            <span class="tag">Phishing</span>
+            <span class="tag">Communication</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Benjamin Legoll - Portfolio professionnel</p>
+  </footer>
+
+</body>
+</html>
