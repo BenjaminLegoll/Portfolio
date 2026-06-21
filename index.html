@@ -4,7 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Benjamin Legoll | Portfolio</title>
+  <script>
+    (() => {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark" || (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.dataset.theme = "dark";
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css">
+  <script src="theme.js" defer></script>
 </head>
 <body>
 
@@ -18,12 +27,18 @@
     <div class="container nav-container">
       <a href="index.html" class="logo">Benjamin Legoll</a>
 
-      <div class="nav-links">
-        <a href="#a-propos">À propos</a>
-        <a href="#competences">Compétences</a>
-        <a href="#projets">Projets</a>
-        <a href="#experience">Expérience</a>
-        <a href="#contact">Contact</a>
+      <div class="nav-actions">
+        <div class="nav-links">
+          <a href="#a-propos">À propos</a>
+          <a href="#technologies">Technologies</a>
+          <a href="#projets">Projets</a>
+          <a href="#experience">Expérience</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Basculer le mode sombre" title="Mode sombre">
+          <span aria-hidden="true">◐</span>
+        </button>
       </div>
     </div>
   </nav>
@@ -36,61 +51,102 @@
       <h1>Benjamin Legoll</h1>
 
       <p class="subtitle">
-        Étudiant en BUT Réseaux & Télécommunications • Alternant chez Orange en 2e et 3e année • Réseaux • Linux
+        Étudiant en BUT Réseaux & Télécommunications parcours ROM, alternant chez Orange PPC à Strasbourg.
       </p>
 
       <div class="hero-buttons">
         <a class="btn" href="#contact">Me contacter</a>
+        <a class="btn btn-secondary" href="CV_Benjamin_Legoll.pdf" target="_blank" rel="noopener noreferrer">Télécharger mon CV</a>
         <a class="btn btn-secondary" href="projects.html">Mes projets</a>
       </div>
 
     </div>
   </header>
 
+  <section class="stats container" aria-label="Chiffres clés">
+    <div class="stat">
+      <h3>1</h3>
+      <p>alternance</p>
+    </div>
+
+    <div class="stat">
+      <h3>6</h3>
+      <p>projets SAÉ</p>
+    </div>
+
+    <div class="stat">
+      <h3>7+</h3>
+      <p>contrats d'animation ALSH</p>
+    </div>
+
+    <div class="stat">
+      <h3>SPV</h3>
+      <p>depuis 2025</p>
+    </div>
+  </section>
+
   <main class="container">
 
     <section id="a-propos" class="card">
-      <h2>À propos de moi</h2>
+      <h2>À propos</h2>
 
       <p>
-        Actuellement en BUT Réseaux & Télécommunications, je choisirais le parcours ROM à l'IUT de Colmar pour mon alternance chez Orange PPC à Strasbourg.
+        Je suis actuellement alternant chez Orange PPC à Strasbourg dans le cadre d'un BUT Réseaux & Télécommunications parcours ROM.
       </p>
 
       <p>
-        Ma formation me permet de développer des compétences en réseaux, systèmes Linux,
-        télécommunications et développement d'outils numériques.
+        Je souhaite évoluer dans les domaines des réseaux, de l'administration systèmes et de l'exploitation d'infrastructures. Je suis ouvert aux opportunités d'alternance, de stage ou d'emploi qui me permettraient de progresser sur des environnements techniques concrets.
       </p>
 
       <p>
-        Passionné par les nouvelles technologies, j'aime comprendre le fonctionnement
-        des infrastructures réseau et participer à des projets techniques concrets.
+        Techniquement, je m'intéresse aux réseaux d'entreprise, aux services Linux, à la virtualisation, à l'automatisation et à la cybersécurité opérationnelle.
       </p>
 
       <p>
-        Mon engagement en tant que sapeur-pompier volontaire m'a également permis de développer
-        la rigueur, l'esprit d'équipe et la gestion des responsabilités.
+        Curieux et rigoureux, j'apprécie les projets mêlant déploiement, supervision, dépannage et documentation. Mon objectif est de gagner en autonomie sur l'administration d'infrastructures et de contribuer à des services fiables, sécurisés et utiles aux utilisateurs.
       </p>
     </section>
 
-    <section class="stats">
-      <div class="stat">
-        <h3>6+</h3>
-        <p>Projets réalisés</p>
-      </div>
+    <section id="technologies" class="card">
+      <h2>Technologies</h2>
 
-      <div class="stat">
-        <h3>3+</h3>
-        <p>Années d'engagement associatif</p>
-      </div>
+      <div class="tech-groups">
+        <article>
+          <h3>Réseaux</h3>
+          <div class="badges">
+            <span class="badge">Cisco IOS</span>
+            <span class="badge">VLAN</span>
+            <span class="badge">Routage</span>
+            <span class="badge">DHCP</span>
+            <span class="badge">DNS</span>
+            <span class="badge">Wireshark</span>
+            <span class="badge">GNS3</span>
+            <span class="badge">EVE-NG</span>
+          </div>
+        </article>
 
-      <div class="stat">
-        <h3>1</h3>
-        <p>Alternance en cours</p>
-      </div>
+        <article>
+          <h3>Systèmes</h3>
+          <div class="badges">
+            <span class="badge">Linux Debian</span>
+            <span class="badge">Ubuntu</span>
+            <span class="badge">Apache</span>
+            <span class="badge">Proxmox</span>
+            <span class="badge">Docker</span>
+          </div>
+        </article>
 
-      <div class="stat">
-        <h3>100%</h3>
-        <p>Motivation</p>
+        <article>
+          <h3>Développement</h3>
+          <div class="badges">
+            <span class="badge">Python</span>
+            <span class="badge">SQL</span>
+            <span class="badge">HTML</span>
+            <span class="badge">CSS</span>
+            <span class="badge">Django</span>
+            <span class="badge">PHP</span>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -101,22 +157,22 @@
 
         <article>
           <h3>Réseaux & Télécommunications</h3>
-          <p>Configuration réseau, VLAN, routage, Cisco, Wireshark et infrastructures télécom.</p>
+          <p>Configuration réseau, segmentation, routage, analyse de trafic et compréhension des infrastructures télécoms.</p>
         </article>
 
         <article>
           <h3>Systèmes & Administration</h3>
-          <p>Linux Debian/Ubuntu, virtualisation, administration système et PowerShell.</p>
+          <p>Linux Debian/Ubuntu, virtualisation, services web, administration système et environnements de test.</p>
         </article>
 
         <article>
           <h3>Développement</h3>
-          <p>Python, SQL, HTML/CSS, PHP, automatisation et outils numériques.</p>
+          <p>Python, SQL, HTML/CSS, PHP, Django, automatisation et création d'outils numériques simples.</p>
         </article>
 
         <article>
           <h3>Qualités humaines</h3>
-          <p>Travail en équipe, autonomie, adaptabilité et sens des responsabilités.</p>
+          <p>Travail en équipe, rigueur, adaptabilité, gestion du stress et sens des responsabilités.</p>
         </article>
 
       </div>
@@ -133,12 +189,76 @@
 
         <article>
           <h3>SAÉ 2.03</h3>
-          <p>Application web Django de gestion commerciale pour un drive marchand.</p>
+          <p>Application web Django de gestion commerciale pour un drive marchand, avec base SQL et déploiement sur VM Debian.</p>
+
+          <div class="project-captures">
+            <figure class="project-shot">
+              <div class="shot-frame shot-dashboard" aria-hidden="true">
+                <span class="shot-topbar"></span>
+                <span class="shot-sidebar"></span>
+                <span class="shot-card-wide"></span>
+                <span class="shot-card-small"></span>
+                <span class="shot-card-small"></span>
+              </div>
+              <figcaption>Interface Django</figcaption>
+            </figure>
+
+            <figure class="project-shot">
+              <div class="shot-frame shot-table" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <figcaption>Base de données</figcaption>
+            </figure>
+
+            <figure class="project-shot">
+              <div class="shot-frame shot-terminal" aria-hidden="true">
+                <span>$ systemctl status apache2</span>
+                <span>mysql: connected</span>
+                <span>django: running</span>
+              </div>
+              <figcaption>VM Debian</figcaption>
+            </figure>
+          </div>
         </article>
 
         <article>
-          <h3>SAÉ 1.05</h3>
-          <p>Outil Python d'analyse de stockage et génération de scripts PowerShell.</p>
+          <h3>SAÉ 2.01</h3>
+          <p>Conception d'une infrastructure réseau sécurisée avec VLAN, routage, DHCP, ACL et redondance en simulation.</p>
+
+          <div class="project-captures">
+            <figure class="project-shot">
+              <div class="shot-frame shot-network" aria-hidden="true">
+                <span class="link link-a"></span>
+                <span class="link link-b"></span>
+                <span class="link link-c"></span>
+                <span class="node node-a">R1</span>
+                <span class="node node-b">SW</span>
+                <span class="node node-c">SRV</span>
+                <span class="node node-d">PC</span>
+              </div>
+              <figcaption>Topologie GNS3</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article>
+          <h3>SAÉ 1.03</h3>
+          <p>Étude de couverture Wi-Fi, analyse de signal et représentation des zones de couverture d'un réseau sans fil.</p>
+
+          <div class="project-captures">
+            <figure class="project-shot">
+              <div class="shot-frame shot-heatmap" aria-hidden="true">
+                <span class="map-grid"></span>
+                <span class="access-point access-a"></span>
+                <span class="access-point access-b"></span>
+              </div>
+              <figcaption>Heatmap Wi-Fi</figcaption>
+            </figure>
+          </div>
         </article>
 
       </div>
@@ -149,26 +269,80 @@
     </section>
 
     <section id="experience" class="card">
-      <h2>Expériences professionnelles</h2>
+      <h2>Expériences & engagements</h2>
 
       <div class="experience-list">
 
         <article>
-          <h3>Alternant - Orange PPC Strasbourg</h3>
+          <h3>Alternant Réseaux & Télécommunications - Orange PPC</h3>
           <p>
-            Participation aux activités techniques liées aux réseaux et infrastructures
-            télécom dans le cadre de mon BUT Réseaux & Télécommunications.
+            Participation à l'exploitation et au support d'infrastructures télécoms.
+            Découverte des processus opérationnels d'un grand opérateur et montée en compétence sur les réseaux et services de communication.
+          </p>
+        </article>
+
+        <article>
+          <h3>Sapeur-Pompier Volontaire</h3>
+          <p>
+            Engagement citoyen impliquant rigueur, gestion du stress,
+            travail d'équipe et prise de décision rapide.
           </p>
         </article>
 
         <article>
           <h3>Animateur ALSH</h3>
           <p>
-            Accueil et encadrement d'enfants de 3 à 12 ans durant les périodes de vacances scolaires.
+            Accueil et encadrement d'enfants de 3 à 12 ans durant les périodes de vacances scolaires, avec préparation d'activités et gestion de groupe.
           </p>
           <h6>Contrat d'Engagement Éducatif</h6>
         </article>
 
+      </div>
+    </section>
+
+    <section id="timeline" class="card">
+      <h2>Timeline</h2>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <span class="timeline-year">2024</span>
+          <div class="timeline-content">
+            <h3>BAFA</h3>
+            <p>Obtention du Brevet d'Aptitude aux Fonctions d'Animateur.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <span class="timeline-year">2024</span>
+          <div class="timeline-content">
+            <h3>Entrée en BUT RT</h3>
+            <p>Début du BUT Réseaux & Télécommunications.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <span class="timeline-year">2025</span>
+          <div class="timeline-content">
+            <h3>Alternance Orange</h3>
+            <p>Intégration d'Orange PPC à Strasbourg.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <span class="timeline-year">2025</span>
+          <div class="timeline-content">
+            <h3>Sapeur-Pompier Volontaire</h3>
+            <p>Début de l'engagement SPV.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <span class="timeline-year">2026</span>
+          <div class="timeline-content">
+            <h3>BUT RT année 2</h3>
+            <p>Poursuite du parcours ROM et consolidation des compétences réseaux, systèmes et télécoms.</p>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -179,17 +353,20 @@
 
         <article>
           <h3>BAFA</h3>
-          <h6>Brevet d'Aptitude aux Fonctions d'Animateur</h6>
+          <h5>Brevet d'Aptitude aux Fonctions d'Animateur</h5>
+          <h6>Obtenu en août 2024</h6>
         </article>
 
         <article>
           <h3>Baccalauréat Général</h3>
-          <h6>Spécialités Mathématiques et NSI • Option Espagnol</h6>
+          <h5>Spécialités Mathématiques et NSI • Option Espagnol</h5>
+          <h6>Obtenu en juillet 2024</h6>
         </article>
 
         <article>
           <h3>PSC1</h3>
-          <h6>Prévention et Secours Civiques de niveau 1</h6>
+          <h5>Prévention et Secours Civiques de niveau 1</h5>
+          <h6>Obtenu en 2024</h6>
         </article>
 
       </div>
@@ -203,12 +380,19 @@
         N'hésitez pas à me contacter.
       </p>
 
-      <p>
-        <a href="mailto:benjamin.legoll@uha.fr">benjamin.legoll@uha.fr</a>
+      <div class="contact-links">
+        <a href="https://github.com/glufy100" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/benjamin-legoll/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:benjamin.legoll@uha.fr">Email</a>
+        <a href="tel:+33675904981">Téléphone</a>
+      </div>
+
+      <p class="contact-detail">
+        <strong>Email :</strong> <a href="mailto:benjamin.legoll@uha.fr">benjamin.legoll@uha.fr</a>
       </p>
 
-      <p>
-        <strong>06 75 90 49 81</strong>
+      <p class="contact-detail">
+        <strong>Téléphone :</strong> 06 75 90 49 81
       </p>
     </section>
 

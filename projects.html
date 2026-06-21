@@ -4,7 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mes Projets | Benjamin Legoll</title>
+  <script>
+    (() => {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark" || (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.dataset.theme = "dark";
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css">
+  <script src="theme.js" defer></script>
 </head>
 <body>
 
@@ -18,11 +27,18 @@
     <div class="container nav-container">
       <a href="index.html" class="logo">Benjamin Legoll</a>
 
-      <div class="nav-links">
-        <a href="index.html#a-propos">À propos</a>
-        <a href="index.html#competences">Compétences</a>
-        <a href="index.html#projets">Projets</a>
-        <a href="index.html#contact">Contact</a>
+      <div class="nav-actions">
+        <div class="nav-links">
+          <a href="index.html#a-propos">À propos</a>
+          <a href="index.html#technologies">Technologies</a>
+          <a href="index.html#projets">Projets</a>
+          <a href="index.html#experience">Expérience</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Basculer le mode sombre" title="Mode sombre">
+          <span aria-hidden="true">◐</span>
+        </button>
       </div>
     </div>
   </nav>
@@ -34,11 +50,11 @@
       <h1>Mes Projets</h1>
 
       <p class="subtitle">
-        Découvrez mes réalisations en développement, réseaux et cybersécurité.
+        Réalisations en développement, réseaux, systèmes et cybersécurité.
       </p>
 
       <div class="hero-buttons">
-        <a class="btn btn-secondary" href="index.html">← Retour à l’accueil</a>
+        <a class="btn btn-secondary" href="index.html">Retour à l'accueil</a>
       </div>
 
     </div>
@@ -64,6 +80,39 @@
             sur une base SQL et des interfaces CRUD complètes.
           </p>
 
+          <div class="project-captures">
+            <figure class="project-shot">
+              <div class="shot-frame shot-dashboard" aria-hidden="true">
+                <span class="shot-topbar"></span>
+                <span class="shot-sidebar"></span>
+                <span class="shot-card-wide"></span>
+                <span class="shot-card-small"></span>
+                <span class="shot-card-small"></span>
+              </div>
+              <figcaption>Interface Django</figcaption>
+            </figure>
+
+            <figure class="project-shot">
+              <div class="shot-frame shot-table" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <figcaption>Base de données</figcaption>
+            </figure>
+
+            <figure class="project-shot">
+              <div class="shot-frame shot-terminal" aria-hidden="true">
+                <span>$ systemctl status apache2</span>
+                <span>mysql: connected</span>
+                <span>django: running</span>
+              </div>
+              <figcaption>VM Debian</figcaption>
+            </figure>
+          </div>
+
           <h4>Réalisations :</h4>
           <ul>
             <li>Modélisation des entités (clients, produits, commandes...)</li>
@@ -76,25 +125,25 @@
 
           <h4>English Summary</h4>
 
-<p>
-The objective of this project was to design and deploy a web application for a commercial drive service using the Django framework.
-The platform enables the management of customers, products, categories and orders through a complete CRUD interface.
-</p>
+          <p>
+            The objective of this project was to design and deploy a web application for a commercial drive service using the Django framework.
+            The platform enables the management of customers, products, categories and orders through a complete CRUD interface.
+          </p>
 
-<p>
-My contribution included participating in the development of several CRUD functionalities, enriching the database content and deploying the application on a Debian Linux virtual machine.
-The application was hosted using Apache2 and connected to a MySQL database.
-</p>
+          <p>
+            My contribution included participating in the development of several CRUD functionalities, enriching the database content and deploying the application on a Debian Linux virtual machine.
+            The application was hosted using Apache2 and connected to a MySQL database.
+          </p>
 
-<p>
-Through this project, I strengthened my skills in Python, Django, SQL, Linux administration, web development and teamwork.
-</p>
+          <p>
+            Through this project, I strengthened my skills in Python, Django, SQL, Linux administration, web development and teamwork.
+          </p>
 
           <a class="project-link"
              href="https://github.com/glufy100/SAE203"
              target="_blank"
              rel="noopener noreferrer">
-            Voir le projet GitHub →
+            Voir le projet GitHub
           </a>
 
           <div class="tags">
@@ -116,7 +165,7 @@ Through this project, I strengthened my skills in Python, Django, SQL, Linux adm
           </p>
 
           <p>
-            Développement d’un outil permettant d’analyser l’espace disque et de détecter
+            Développement d'un outil permettant d'analyser l'espace disque et de détecter
             les fichiers volumineux afin de faciliter le nettoyage système.
           </p>
 
@@ -144,9 +193,24 @@ Through this project, I strengthened my skills in Python, Django, SQL, Linux adm
           </p>
 
           <p>
-            Conception et déploiement d’une infrastructure réseau complète avec segmentation,
+            Conception et déploiement d'une infrastructure réseau complète avec segmentation,
             routage dynamique et services réseau en environnement simulé.
           </p>
+
+          <div class="project-captures">
+            <figure class="project-shot">
+              <div class="shot-frame shot-network" aria-hidden="true">
+                <span class="link link-a"></span>
+                <span class="link link-b"></span>
+                <span class="link link-c"></span>
+                <span class="node node-a">R1</span>
+                <span class="node node-b">SW</span>
+                <span class="node node-c">SRV</span>
+                <span class="node node-d">PC</span>
+              </div>
+              <figcaption>Topologie GNS3</figcaption>
+            </figure>
+          </div>
 
           <h4>Réalisations :</h4>
           <ul>
@@ -176,7 +240,7 @@ Through this project, I strengthened my skills in Python, Django, SQL, Linux adm
           </p>
 
           <p>
-            Simulation d’un réseau d’entreprise avec VLAN, routage inter-VLAN et services DHCP
+            Simulation d'un réseau d'entreprise avec VLAN, routage inter-VLAN et services DHCP
             afin de comprendre les bases des infrastructures réseau.
           </p>
 
@@ -196,9 +260,20 @@ Through this project, I strengthened my skills in Python, Django, SQL, Linux adm
           </p>
 
           <p>
-            Étude d’un réseau Wi-Fi d’entreprise avec analyse de couverture et simulation
-            d’une infrastructure centralisée.
+            Étude d'un réseau Wi-Fi d'entreprise avec analyse de couverture et simulation
+            d'une infrastructure centralisée.
           </p>
+
+          <div class="project-captures">
+            <figure class="project-shot">
+              <div class="shot-frame shot-heatmap" aria-hidden="true">
+                <span class="map-grid"></span>
+                <span class="access-point access-a"></span>
+                <span class="access-point access-b"></span>
+              </div>
+              <figcaption>Heatmap Wi-Fi</figcaption>
+            </figure>
+          </div>
 
           <div class="tags">
             <span class="tag">Wi-Fi</span>
@@ -216,7 +291,7 @@ Through this project, I strengthened my skills in Python, Django, SQL, Linux adm
           </p>
 
           <p>
-            Création d’un support de sensibilisation sur le phishing et les bonnes pratiques
+            Création d'un support de sensibilisation sur le phishing et les bonnes pratiques
             de sécurité informatique.
           </p>
 
